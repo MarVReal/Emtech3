@@ -13,19 +13,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  content: {
-    flex: 1,
-    backgroundColor: 'white'
-  },
-  inputMethodEditor: {
-    flex: 1,
-    backgroundColor: 'white'
-  },
-  toolbar: {
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(0,0,0,0.04)',
-    backgroundColor: 'white'
-  }
+  androidStatusBar: {
+    barStyle: "dark-content",
+    backgroundColor: "#FFFFFF",
+}
 });
