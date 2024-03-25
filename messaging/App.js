@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   toolbar:{
     flex: 1,
-    borderTopWidth: 'rgba(0,0,0,0.04)',
+    borderTopColor: 'red',
     backgroundColor:'white'
   },
 });
