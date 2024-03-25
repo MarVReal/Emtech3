@@ -4,7 +4,7 @@ import React from 'react';
 
 export default class Status extends React.Component {
     state = {
-        info: null,
+        info: 'none',
     };
 
     render() {

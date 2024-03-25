@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   toolbar:{
-    flex:1,
+    flex: 1,
     borderTopWidth: 'rgba(0,0,0,0.04)',
     backgroundColor:'white'
   },
