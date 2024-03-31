@@ -9,31 +9,32 @@ export default function App(){
       <Status/>
       <StatusBar style="auto"/>
       <Text style={styles.content}>MessageList</Text>
-      <Text style={styles.inputMethodEditor}>Input Method Editor</Text>
       <Text style={styles.toolbar}>Toolbar</Text>
+      <Text style={styles.inputMethodEditor}>Input Method Editor</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
   },
   content: {
-    flex: 1,
-    padding: 50,
-    backgroundColor: 'white',
+    flex: 8,
+    padding: 2.5,
+    marginTop: 50,
   },
-  inputMethodEditor:{
-    flex: 1,
-    backgroundColor:'white'
+  inputMethodEditor: {
+    flex: 3,
+    backgroundColor: 'grey',
   },
-  toolbar:{
-    flex: 1,
-    borderTopColor: 'red',
-    backgroundColor:'white'
+  toolbar: {
+    flex: 0.8,
+    flexDirection: "row",
+    justifyContent: "space-between", // Align items with space between
+    alignItems: "center", // Align items vertically centered
+    borderTopColor: 'rgba(0,0,0,0.04)',
+    backgroundColor: '#f0f0f0',
+    padding: 5,
   },
 });
