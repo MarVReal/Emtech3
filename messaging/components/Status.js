@@ -63,13 +63,11 @@ export default class Status extends React.Component {
           <View style={styles.notificationContainer}>
             <StatusBar
                 backgroundColor={isConnected ? 'transparent' : 'red'}
-                barStyle={isConnected ? 'dark-content' : 'light-content'}
+                barStyle={isConnected ? 'light-content' : 'light-content'}
                 animated={true}
             />
             <Animated.View style={[styles.notification, { opacity: notificationOpacity, backgroundColor: notificationColor, zIndex: 10 }]}>
-                <View style={styles.bubblecontainer} backgroundColor={isConnected ? 'green' : 'red'}>
-                  <Text style={styles.bubbletext}>{notificationText}</Text>
-                </View>
+                <Text style={styles.notificationText}>{notificationText}</Text>
             </Animated.View>
           </View>
         );
@@ -92,29 +90,22 @@ const styles = StyleSheet.create({
         height: statusHeight,
     },
     notificationContainer: {
+        position: 'absolute',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1,
     },
     notification: {
-      flex:1,
-      position: 'absolute',
-      top: 0, // Adjust as needed
-      left:0,
-      right: 0,
-      alignItems: 'center',
-      justifyContent: 'center',
+        top: statusHeight + 27.5, // Adjust as needed
+        left:0,
+        right: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 3,
     },
-    bubbletext:{
+    notificationText: {
         color: 'white',
-        fontSize: 12,
+        fontSize: 9,
     },
-    bubblecontainer:{
-      flex: 1,
-      borderRadius: 10,
-      top: statusHeight + 50, 
-      alignItems: 'center',
-      padding: 7.5,
-    }
 });
