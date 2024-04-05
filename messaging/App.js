@@ -5,6 +5,7 @@ import Status from './components/Status';
 import MessageList from './components/MessageList';
 import { createImageMessage, createLocationMessage, createTextMessage } from './utils/MessageUtils';
 import Toolbar from "./components/Toolbar";
+import * as Location from 'expo-location';
 
 export default class App extends React.Component {
   state = {
@@ -26,9 +27,22 @@ export default class App extends React.Component {
   handlePressToolbarCamera = () => {
     // ...
     };
-  handlePressToolbarLocation = () => {
-  // ...
-  };
+  handlePressToolbarLocation = async () => {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Permission to access location was denied');
+        return;
+      }
+  
+      let location = await Location.getCurrentPositionAsync({});
+      this.setState({
+        messages: [createLocationMessage({
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        }), ...this.state.messages],
+      });
+    };
+
   handleChangeFocus = (isFocused) => { 
     this.setState({ isInputFocused: isFocused });
   };
